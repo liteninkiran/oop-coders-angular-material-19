@@ -1,10 +1,11 @@
 @use "@angular/material" as mat;
+@use "theme-colors" as theme;
 
 html {
     color-scheme: light;
     @include mat.theme(
         (
-            color: mat.$rose-palette,
+            color: theme.$primary-palette,
         )
     );
 }
