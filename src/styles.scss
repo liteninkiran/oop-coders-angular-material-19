@@ -14,6 +14,30 @@ html {
     }
 }
 
+.tertiary {
+    @include mat.theme(
+        (
+            color: theme.$tertiary-palette,
+        )
+    );
+}
+
+.secondary {
+    @include mat.theme(
+        (
+            color: theme.$secondary-palette,
+        )
+    );
+}
+
+.error {
+    @include mat.theme(
+        (
+            color: theme.$error-palette,
+        )
+    );
+}
+
 html,
 body {
     height: 100%;
