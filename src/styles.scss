@@ -8,6 +8,10 @@ html {
             color: theme.$primary-palette,
         )
     );
+
+    @media (prefers-contrast: more) {
+        @include theme.high-contrast-overrides("light");
+    }
 }
 
 html,
