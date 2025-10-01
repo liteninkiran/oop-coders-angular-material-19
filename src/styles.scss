@@ -9,6 +9,12 @@ html {
         )
     );
 
+    @include mat.theme-overrides(
+        (
+            corner-full: "5px",
+        )
+    );
+
     @media (prefers-contrast: more) {
         @include theme.high-contrast-overrides("light");
     }
@@ -20,6 +26,11 @@ html {
             color: theme.$tertiary-palette,
         )
     );
+    @include mat.theme-overrides(
+        (
+            corner-full: "5px",
+        )
+    );
 }
 
 .secondary {
@@ -28,12 +39,22 @@ html {
             color: theme.$secondary-palette,
         )
     );
+    @include mat.theme-overrides(
+        (
+            corner-full: "5px",
+        )
+    );
 }
 
 .error {
     @include mat.theme(
         (
             color: theme.$error-palette,
+        )
+    );
+    @include mat.theme-overrides(
+        (
+            corner-full: "5px",
         )
     );
 }
