@@ -9,9 +9,12 @@ html {
         )
     );
 
-    @include mat.theme-overrides(
+    @include mat.button-overrides(
         (
-            corner-full: "5px",
+            filled-container-shape: 5px,
+            text-container-shape: 5px,
+            outlined-container-shape: 5px,
+            protected-container-shape: 5px,
         )
     );
 
@@ -26,9 +29,12 @@ html {
             color: theme.$tertiary-palette,
         )
     );
-    @include mat.theme-overrides(
+    @include mat.button-overrides(
         (
-            corner-full: "5px",
+            filled-container-shape: 5px,
+            text-container-shape: 5px,
+            outlined-container-shape: 5px,
+            protected-container-shape: 5px,
         )
     );
 }
@@ -39,9 +45,12 @@ html {
             color: theme.$secondary-palette,
         )
     );
-    @include mat.theme-overrides(
+    @include mat.button-overrides(
         (
-            corner-full: "5px",
+            filled-container-shape: 5px,
+            text-container-shape: 5px,
+            outlined-container-shape: 5px,
+            protected-container-shape: 5px,
         )
     );
 }
@@ -52,9 +61,12 @@ html {
             color: theme.$error-palette,
         )
     );
-    @include mat.theme-overrides(
+    @include mat.button-overrides(
         (
-            corner-full: "5px",
+            filled-container-shape: 5px,
+            text-container-shape: 5px,
+            outlined-container-shape: 5px,
+            protected-container-shape: 5px,
         )
     );
 }
