@@ -8,18 +8,20 @@ import {
     RouterOutlet,
 } from '@angular/router';
 import { filter } from 'rxjs';
-import { ThemeService } from '../services/theme.service';
+import { Colour, ThemeService } from '../services/theme.service';
 import { FormsModule } from '@angular/forms';
 import { LoaderService } from '../services/loader.service';
+import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
     selector: 'app-pages',
-    imports: [RouterOutlet, FormsModule],
+    imports: [RouterOutlet, FormsModule, MatRadioModule],
     templateUrl: './pages.component.html',
     styleUrl: './pages.component.scss',
 })
 export class PagesComponent {
-    breadcrumb = 'Dashboard'; // default fallback
+    public breadcrumb = 'Dashboard';
+    public selectedColour: Colour = 'green';
 
     constructor(
         private router: Router,
@@ -37,9 +39,10 @@ export class PagesComponent {
                     this.title.setTitle(this.breadcrumb);
                 });
             });
+        this.selectedColour = this.themeService.colour();
     }
 
-    getChild(route: ActivatedRoute): ActivatedRoute {
+    public getChild(route: ActivatedRoute): ActivatedRoute {
         if (route.firstChild) {
             return this.getChild(route.firstChild);
         }
