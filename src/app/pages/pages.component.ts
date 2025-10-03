@@ -17,6 +17,7 @@ import { MatToolbar } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
     selector: 'app-pages',
@@ -30,6 +31,7 @@ import { MatButtonModule } from '@angular/material/button';
         MatListModule,
         MatIconModule,
         MatButtonModule,
+        MatProgressSpinnerModule,
     ],
     templateUrl: './pages.component.html',
     styleUrl: './pages.component.scss',
