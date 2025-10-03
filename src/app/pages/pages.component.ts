@@ -15,6 +15,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
     selector: 'app-pages',
@@ -26,6 +27,7 @@ import { MatListModule } from '@angular/material/list';
         MatSidenavModule,
         MatToolbar,
         MatListModule,
+        MatIconModule,
     ],
     templateUrl: './pages.component.html',
     styleUrl: './pages.component.scss',
