@@ -18,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
     selector: 'app-pages',
@@ -32,6 +33,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         MatIconModule,
         MatButtonModule,
         MatProgressSpinnerModule,
+        MatProgressBarModule,
     ],
     templateUrl: './pages.component.html',
     styleUrl: './pages.component.scss',
@@ -46,7 +48,7 @@ export class PagesComponent {
         private route: ActivatedRoute,
         private title: Title,
         public themeService: ThemeService,
-        public loaderService: LoaderService
+        public loaderService: LoaderService,
     ) {
         this.router.events
             .pipe(filter((event) => event instanceof NavigationEnd))
