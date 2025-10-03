@@ -21,7 +21,7 @@
         </mat-toolbar>
 
         <mat-list role="list">
-            <mat-list-item role="listitem">
+            <mat-list-item role="listitem" class="setting-list-item">
                 <h4 matListItemTitle>Select A Theme</h4>
                 <mat-radio-group
                     (change)="themeService.setColour($event.value)"
@@ -32,7 +32,7 @@
                     <mat-radio-button value="blue">Blue</mat-radio-button>
                 </mat-radio-group>
             </mat-list-item>
-            <mat-list-item role="listitem">
+            <mat-list-item role="listitem" class="setting-list-item">
                 <h4 matListItemTitle>Select A Mode</h4>
                 <mat-radio-group
                     (change)="themeService.setMode($event.value)"

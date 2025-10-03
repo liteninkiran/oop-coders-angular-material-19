@@ -29,6 +29,14 @@
     }
 }
 
+.setting-list-item {
+    @include mat.list-overrides(
+        (
+            list-item-two-line-container-height: 80px,
+        )
+    );
+}
+
 .mainnav {
     width: 300px;
 }
