@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #mainnav opened>
+    <mat-sidenav #mainnav opened mode="side" class="mainnav">
         <ul>
             <li>
                 <a routerLink="">Dashboard</a>
@@ -18,7 +18,7 @@
             </li>
         </ul>
     </mat-sidenav>
-    <mat-sidenav #setting opened position="end">
+    <mat-sidenav #setting opened position="end" mode="over">
         <h4>Select A Theme</h4>
         <mat-radio-group
             (change)="themeService.setColour($event.value)"
