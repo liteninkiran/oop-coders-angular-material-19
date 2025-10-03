@@ -4,11 +4,10 @@ import {
     ActivatedRoute,
     NavigationEnd,
     Router,
-    RouterLink,
     RouterOutlet,
 } from '@angular/router';
 import { filter } from 'rxjs';
-import { Colour, ThemeService } from '../services/theme.service';
+import { Colour, Mode, ThemeService } from '../services/theme.service';
 import { FormsModule } from '@angular/forms';
 import { LoaderService } from '../services/loader.service';
 import { MatRadioModule } from '@angular/material/radio';
@@ -21,7 +20,8 @@ import { MatRadioModule } from '@angular/material/radio';
 })
 export class PagesComponent {
     public breadcrumb = 'Dashboard';
-    public selectedColour: Colour = 'green';
+    public selectedColour: Colour;
+    public selectedMode: Mode;
 
     constructor(
         private router: Router,
@@ -40,6 +40,7 @@ export class PagesComponent {
                 });
             });
         this.selectedColour = this.themeService.colour();
+        this.selectedMode = this.themeService.mode();
     }
 
     public getChild(route: ActivatedRoute): ActivatedRoute {

@@ -3,7 +3,8 @@ import { computed, effect, Injectable, signal } from '@angular/core';
 export type Colour = 'green' | 'red' | 'blue';
 export type Mode = 'light' | 'dark';
 
-const STORAGE_KEY = 'theme-class';
+const THEME_COLOUR = 'theme-colour';
+const THEME_MODE = 'theme-mode';
 
 @Injectable({
     providedIn: 'root',
@@ -12,29 +13,33 @@ export class ThemeService {
     public mode = signal<Mode>('light');
     public colour = signal<Colour>('green');
 
-    //public currentTheme = computed(() => `${this.mode()}-${this.color()}`)
-    public currentTheme = computed(() => this.colour());
+    public currentTheme = computed(() => `${this.mode()}-${this.colour()}`);
 
     constructor() {
-        const saved = localStorage.getItem(STORAGE_KEY) as
-            | 'green'
-            | 'red'
-            | 'blue';
-        if (saved) {
-            this.colour.set(saved);
+        const colour = localStorage.getItem(THEME_COLOUR) as Colour;
+        if (colour) {
+            this.colour.set(colour);
         }
 
-        effect(() => {
+        const mode = localStorage.getItem(THEME_MODE) as Mode;
+        if (mode) {
+            this.mode.set(mode);
+        }
+
+        const setLocalColour = () => {
             document.documentElement.className = this.currentTheme();
-            localStorage.setItem(STORAGE_KEY, this.colour());
-        });
+            localStorage.setItem(THEME_COLOUR, this.colour());
+            localStorage.setItem(THEME_MODE, this.mode());
+        };
+
+        effect(setLocalColour);
     }
 
-    setMode(value: 'light' | 'dark') {
+    public setMode(value: Mode): void {
         this.mode.set(value);
     }
 
-    setColour(value: 'green' | 'red' | 'blue') {
+    public setColour(value: Colour): void {
         this.colour.set(value);
     }
 }
