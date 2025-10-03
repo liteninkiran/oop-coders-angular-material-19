@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { LoaderService } from '../services/loader.service';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbar } from '@angular/material/toolbar';
 
 @Component({
     selector: 'app-pages',
@@ -22,6 +23,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         FormsModule,
         MatRadioModule,
         MatSidenavModule,
+        MatToolbar,
     ],
     templateUrl: './pages.component.html',
     styleUrl: './pages.component.scss',
