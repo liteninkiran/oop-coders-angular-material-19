@@ -1,7 +1,7 @@
 <h2 class="text-error">Welcome!</h2>
 <p>This is a basic admin layout using Angular Material 19.</p>
 
-<mat-grid-list cols="2" rowHeight="200px" gutterSize="5px">
+<mat-grid-list [cols]="col$ | async" rowHeight="200px" gutterSize="5px">
     <mat-grid-tile>
         <mat-grid-tile-header>Button Colours</mat-grid-tile-header>
         <div>
