@@ -10,21 +10,20 @@ export class LoaderService {
     readonly showSpinner = this.spinnerVisible.asReadonly();
     readonly showProgressBar = this.progressBarVisible.asReadonly();
 
-    toggleSpinner(value: boolean) {
+    public toggleSpinner(value: boolean): void {
         this.spinnerVisible.set(value);
     }
 
-    toggleProgressBar(value: boolean) {
+    public toggleProgressBar(value: boolean): void {
         this.progressBarVisible.set(value);
     }
 
-    // Optional helpers
-    startLoading() {
+    public startLoading(): void {
         this.toggleSpinner(true);
         this.toggleProgressBar(true);
     }
 
-    stopLoading() {
+    public stopLoading(): void {
         this.toggleSpinner(false);
         this.toggleProgressBar(false);
     }

@@ -31,11 +31,14 @@
 
     <!-- Settings -->
     <mat-sidenav #setting opened position="end" mode="over">
+        <!-- Heading -->
         <mat-toolbar class="toolbar">
             <span>Settings</span>
         </mat-toolbar>
 
+        <!-- List of Options -->
         <mat-list role="list">
+            <!-- Theme -->
             <mat-list-item role="listitem" class="setting-list-item">
                 <h4 matListItemTitle>Select A Theme</h4>
                 <mat-radio-group
@@ -47,6 +50,8 @@
                     <mat-radio-button value="blue">Blue</mat-radio-button>
                 </mat-radio-group>
             </mat-list-item>
+
+            <!-- Mode -->
             <mat-list-item role="listitem" class="setting-list-item">
                 <h4 matListItemTitle>Select A Mode</h4>
                 <mat-radio-group
@@ -57,13 +62,33 @@
                     <mat-radio-button value="dark">Dark</mat-radio-button>
                 </mat-radio-group>
             </mat-list-item>
+
+            <!-- Toggle Spinner -->
+            <mat-list-item class="setting-list-item" role="listitem">
+                <mat-slide-toggle
+                    (change)="loaderService.toggleSpinner($event.checked)"
+                    labelPosition="before"
+                >
+                    Toggle Progress Spinner
+                </mat-slide-toggle>
+            </mat-list-item>
+
+            <!-- Toggle Progress Bar -->
+            <mat-list-item class="setting-list-item" role="listitem">
+                <mat-slide-toggle
+                    (change)="loaderService.toggleProgressBar($event.checked)"
+                    labelPosition="before"
+                >
+                    Toggle Progress Bar
+                </mat-slide-toggle>
+            </mat-list-item>
         </mat-list>
     </mat-sidenav>
 
     <!-- Toolbar | Router Outlet -->
     <section>
         <!-- Spinner -->
-        @if (false) {
+        @if (loaderService.showSpinner()) {
             <div class="spinner-overlay">
                 <mat-spinner></mat-spinner>
             </div>
@@ -82,7 +107,7 @@
         </mat-toolbar>
 
         <!-- Progress Bar -->
-        @if (true) {
+        @if (loaderService.showProgressBar()) {
             <mat-progress-bar
                 mode="indeterminate"
                 class="theme-builder"
