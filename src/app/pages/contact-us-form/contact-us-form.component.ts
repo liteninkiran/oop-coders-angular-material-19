@@ -44,6 +44,9 @@ const excludeDays = [0, 6];
 export class ContactUsFormComponent {
     public form: FormGroup;
 
+    public weekendFilter = (d: Date | null): boolean =>
+        !excludeDays.includes((d || new Date()).getDay());
+
     constructor(private fb: FormBuilder) {
         this.form = this.fb.group(controls);
     }

@@ -43,6 +43,7 @@
             <mat-label>Preferred Contact Date</mat-label>
             <input
                 matInput
+                [matDatepickerFilter]="weekendFilter"
                 [matDatepicker]="picker"
                 formControlName="contactDate"
             />
