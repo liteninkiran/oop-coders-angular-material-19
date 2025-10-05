@@ -28,15 +28,17 @@
             <textarea matInput formControlName="message"></textarea>
         </mat-form-field>
 
-        <div>
-            <label for="topics">Topic</label>
-            <select name="topics" id="topics">
-                <option value="support">Support</option>
-                <option value="sales">Sales</option>
-                <option value="feedback">Feedback</option>
-            </select>
-        </div>
+        <!-- Topic -->
+        <mat-form-field class="half-width">
+            <mat-label>Topic</mat-label>
+            <mat-select formControlName="topic">
+                <mat-option value="support">Support</mat-option>
+                <mat-option value="sales">Sales</mat-option>
+                <mat-option value="feedback">Feedback</mat-option>
+            </mat-select>
+        </mat-form-field>
 
+        <!-- Priority -->
         <div>
             <input
                 formControlName="priority"
@@ -66,6 +68,7 @@
             <label for="high">high</label>
         </div>
 
+        <!-- Subscribe? -->
         <div>
             <input
                 formControlName="subscribe"
@@ -77,6 +80,7 @@
             <label for="subscribe">Subscribe for updates</label>
         </div>
 
+        <!-- Preferred Contact Date -->
         <div class="form-field">
             <label for="contact-date">Preferred Contact Date</label>
             <input
@@ -87,6 +91,7 @@
             />
         </div>
 
+        <!-- Submit -->
         <button type="submit" [disabled]="form.invalid">Submit</button>
     </form>
 </div>
