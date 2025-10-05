@@ -8,17 +8,18 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 const nameValidators = [Validators.required];
 const emailValidators = [Validators.required, Validators.email];
 const controls = {
-    name: ['', nameValidators],
-    email: ['', emailValidators],
-    message: [''],
-    topic: [''],
+    name: ['John Doe', nameValidators],
+    email: ['john.doe@example.net', emailValidators],
+    message: ['Hi there. Please pack the order carefully.'],
+    topic: ['support'],
     priority: ['medium'],
-    subscribe: [false],
-    contactDate: [null],
+    subscribe: [true],
+    contactDate: ['2025-01-01'],
 };
 
 @Component({
@@ -28,6 +29,7 @@ const controls = {
         MatFormFieldModule,
         MatInputModule,
         MatSelectModule,
+        MatRadioModule,
     ],
     templateUrl: './contact-us-form.component.html',
     styleUrl: './contact-us-form.component.scss',
