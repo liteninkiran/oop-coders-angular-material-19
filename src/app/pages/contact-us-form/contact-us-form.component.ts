@@ -5,10 +5,11 @@ import {
     Validators,
     FormGroup,
 } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
     selector: 'app-contact-us-form',
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, MatFormFieldModule],
     templateUrl: './contact-us-form.component.html',
     styleUrl: './contact-us-form.component.scss',
 })
@@ -27,7 +28,7 @@ export class ContactUsFormComponent {
         });
     }
 
-    onSubmit() {
+    public onSubmit(): void {
         if (this.form.valid) {
             console.log(this.form.value);
             alert('Message sent!');
