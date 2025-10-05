@@ -38,15 +38,21 @@
             </mat-select>
         </mat-form-field>
 
-        <!-- Priority -->
-        <div class="half-width">
-            <label>Priority</label>
-            <mat-radio-group formControlName="priority">
-                <mat-radio-button value="low">Low</mat-radio-button>
-                <mat-radio-button value="medium">Medium</mat-radio-button>
-                <mat-radio-button value="high">High</mat-radio-button>
-            </mat-radio-group>
-        </div>
+        <!-- Preferred Contact Date -->
+        <mat-form-field class="half-width">
+            <mat-label>Preferred Contact Date</mat-label>
+            <input
+                matInput
+                [matDatepicker]="picker"
+                formControlName="contactDate"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
 
         <!-- Subscribe? -->
         <div class="half-width">
@@ -55,15 +61,14 @@
             </mat-checkbox>
         </div>
 
-        <!-- Preferred Contact Date -->
-        <div class="form-field">
-            <label for="contact-date">Preferred Contact Date</label>
-            <input
-                type="date"
-                formControlName="contactDate"
-                id="contact-date"
-                name="contact-date"
-            />
+        <!-- Priority -->
+        <div class="half-width">
+            <label>Priority</label>
+            <mat-radio-group formControlName="priority">
+                <mat-radio-button value="low">Low</mat-radio-button>
+                <mat-radio-button value="medium">Medium</mat-radio-button>
+                <mat-radio-button value="high">High</mat-radio-button>
+            </mat-radio-group>
         </div>
 
         <!-- Submit -->
