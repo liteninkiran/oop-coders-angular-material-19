@@ -1,18 +1,22 @@
 <div class="form-wrapper">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <mat-form-field></mat-form-field>
-        <div>
-            <label for="name">Name:</label>
-            <input formControlName="name" required />
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-grid">
+        <!-- Name -->
+        <mat-form-field class="half-width">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" required />
+        </mat-form-field>
 
-            <label for="email">Email:</label>
-            <input formControlName="email" required type="email" />
-        </div>
+        <!-- Email -->
+        <mat-form-field class="half-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email" required />
+        </mat-form-field>
 
-        <div>
-            <label for="message">Message:</label>
-            <textarea formControlName="message"></textarea>
-        </div>
+        <!-- Message -->
+        <mat-form-field class="full-width">
+            <mat-label>Message</mat-label>
+            <textarea matInput formControlName="message"></textarea>
+        </mat-form-field>
 
         <div>
             <label for="topics">Topic</label>

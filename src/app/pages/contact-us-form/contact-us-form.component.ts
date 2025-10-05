@@ -6,26 +6,31 @@ import {
     FormGroup,
 } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+const nameValidators = [Validators.required];
+const emailValidators = [Validators.required, Validators.email];
+const controls = {
+    name: ['', nameValidators],
+    email: ['', emailValidators],
+    message: [''],
+    topic: [''],
+    priority: ['medium'],
+    subscribe: [false],
+    contactDate: [null],
+};
 
 @Component({
     selector: 'app-contact-us-form',
-    imports: [ReactiveFormsModule, MatFormFieldModule],
+    imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule],
     templateUrl: './contact-us-form.component.html',
     styleUrl: './contact-us-form.component.scss',
 })
 export class ContactUsFormComponent {
-    form: FormGroup;
+    public form: FormGroup;
 
     constructor(private fb: FormBuilder) {
-        this.form = this.fb.group({
-            name: ['', Validators.required],
-            email: ['', [Validators.required, Validators.email]],
-            message: [''],
-            topic: [''],
-            priority: ['medium'],
-            subscribe: [false],
-            contactDate: [null],
-        });
+        this.form = this.fb.group(controls);
     }
 
     public onSubmit(): void {
