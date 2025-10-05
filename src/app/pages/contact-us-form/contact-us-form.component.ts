@@ -12,6 +12,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 const nameValidators = [Validators.required];
 const emailValidators = [Validators.required, Validators.email];
@@ -36,6 +38,8 @@ const excludeDays = [0, 6];
         MatRadioModule,
         MatCheckboxModule,
         MatDatepickerModule,
+        MatButtonModule,
+        MatIconModule,
     ],
     templateUrl: './contact-us-form.component.html',
     styleUrl: './contact-us-form.component.scss',

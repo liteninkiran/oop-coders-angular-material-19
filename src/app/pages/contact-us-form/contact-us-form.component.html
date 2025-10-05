@@ -73,6 +73,15 @@
         </div>
 
         <!-- Submit -->
-        <button type="submit" [disabled]="form.invalid">Submit</button>
+        <button
+            class="submit-button"
+            mat-fab
+            extended
+            type="submit"
+            [disabled]="form.invalid"
+        >
+            <mat-icon>send</mat-icon>
+            Submit
+        </button>
     </form>
 </div>
